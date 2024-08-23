@@ -11,15 +11,17 @@ app = Flask(__name__)
 # Enable CORS on all routes
 CORS(app)
 
+survey_table_name = "survey_data_combined"
+
 # API endpoint
 @app.route('/tech-workers', methods=['GET'])
 def get_tech_workers_data():
     # Define the columns you want to return
-    columns = ['survey_date', 'Age', 'Gender', 'company_size']
+    columns = ['survey_date', 'Age', 'Gender', 'company size']
 
     conn = sqlite3.connect('./survey_database.db')
 
-    query = f"SELECT survey_date, Age, Gender, company_size, seek_help, mental_health_consequence FROM survey_data WHERE tech_company = 'Yes';"
+    query = f"SELECT Age, Gender, `company size`, seek_help, mental_health_consequence FROM {survey_table_name} WHERE tech_company = 'Yes';"
     result_df = pd.read_sql_query(query, conn)
 
     conn.close()
@@ -34,7 +36,7 @@ def get_tech_workers_data():
 def get_mental_vs_physical():
     conn = sqlite3.connect('./survey_database.db')
 
-    query = f"SELECT mental_vs_physical FROM survey_data WHERE Country = 'United States';"
+    query = f"SELECT mental_vs_physical FROM {survey_table_name} WHERE Country = 'United States';"
     result_df = pd.read_sql_query(query, conn)
 
     conn.close()
@@ -48,7 +50,7 @@ def get_mental_vs_physical():
 def get_mental_health_comments():
     conn = sqlite3.connect('./survey_database.db')
 
-    query = f"SELECT comments FROM survey_data WHERE Country = 'United States';"
+    query = f"SELECT comments FROM {survey_table_name} WHERE Country = 'United States';"
     result_df = pd.read_sql_query(query, conn)
 
     conn.close()
