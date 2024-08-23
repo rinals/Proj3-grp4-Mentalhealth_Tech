@@ -23,11 +23,6 @@
                 <div class="position-sticky">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#" onclick="handleMenuClick('tech-workers')">
-                                Tech Workers
-                            </a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#" onclick="handleMenuClick('mental-vs-physical')">
                                 Mental vs Physical
                             </a>
@@ -35,11 +30,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#" onclick="handleMenuClick('mental-health-comments')">
                                 Mental Health Filtered Comments
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleMenuClick('age-wise')">
-                                Age wise
                             </a>
                         </li>
                     </ul>
@@ -65,7 +55,6 @@
             // Display loading message
             document.getElementById('result').innerHTML = '<p></p>';
 
-            // Mock API URL
             const apiUrl = 'http://127.0.0.1:5000/' + section;
 
             // Fetch data from the API
@@ -152,23 +141,7 @@
                     b: 50,
                     t: 100,
                     pad: 4
-                },
-                annotations: [
-                    {
-                        xref: 'paper',
-                        yref: 'paper',
-                        x: 1.05, // Position to the right of the chart
-                        y: 1,
-                        xanchor: 'left',
-                        yanchor: 'top',
-                        text: 'tts = Therapy, Treatment, Support',
-                        showarrow: false,
-                        font: {
-                            size: 12,
-                            color: 'black'
-                        }
-                    }
-                ]
+                }
             };
 
             // Display Plotly chart
