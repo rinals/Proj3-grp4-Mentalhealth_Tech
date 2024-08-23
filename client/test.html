@@ -6,6 +6,14 @@
     <title>Simple Bootstrap Page with API</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #result {
+            width: 100%;
+            height: 500px; /* Set the height of the plot area */
+        }
+    </style>
+    <!-- Plotly JS -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <div class="container-fluid">
@@ -20,13 +28,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleMenuClick('gender-wise')">
-                                Gender wise
+                            <a class="nav-link" href="#" onclick="handleMenuClick('mental-vs-physical')">
+                                Mental vs Physical
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#" onclick="handleMenuClick('overall')">
-                                Overall
+                            <a class="nav-link" href="#" onclick="handleMenuClick('mental-health-comments')">
+                                Mental Health Filtered Comments
                             </a>
                         </li>
                         <li class="nav-item">
@@ -41,7 +49,7 @@
             <!-- Main content -->
             <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
                 <div id="content" class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-                    <h1 class="h2">Mental health Dashboard</h1>
+                    <h1 class="h2">Dashboard</h1>
                 </div>
                 <div id="result"></div>
             </main>
@@ -55,7 +63,7 @@
     <script>
         function handleMenuClick(section) {
             // Display loading message
-            document.getElementById('result').innerHTML = '<p>Loading ' + section + '...</p>';
+            document.getElementById('result').innerHTML = '<p></p>';
 
             // Mock API URL
             const apiUrl = 'http://127.0.0.1:5000/' + section;
@@ -73,19 +81,98 @@
         }
 
         function displayResult(section, data) {
-            let resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = '<h2>' + section.charAt(0).toUpperCase() + section.slice(1) + '</h2>';
 
-            if (Array.isArray(data)) {
-                let list = '<ul>';
-                data.forEach(item => {
-                    list += '<li>' + JSON.stringify(item) + '</li>';
-                });
-                list += '</ul>';
-                resultDiv.innerHTML += list;
-            } else {
-                resultDiv.innerHTML += '<p>' + JSON.stringify(data) + '</p>';
+            if (section === 'mental-vs-physical') {
+                displayMentalVsPhysicalPlot(data);
             }
+            else if(section === 'mental-health-comments')
+            {
+                displayMentalHealthComments(data);
+            }
+            else
+            {
+                let resultDiv = document.getElementById('result');
+                resultDiv.innerHTML = '<h2>' + section.charAt(0).toUpperCase() + section.slice(1) + '</h2>';
+
+                if (Array.isArray(data)) {
+                    let list = '<ul>';
+                    data.forEach(item => {
+                        list += '<li>' + JSON.stringify(item) + '</li>';
+                    });
+                    list += '</ul>';
+                    resultDiv.innerHTML += list;
+                } else {
+                    resultDiv.innerHTML += '<p>' + JSON.stringify(data) + '</p>';
+                }
+            }
+        }
+
+        function displayMentalVsPhysicalPlot(data) {
+            // Count occurrences
+            const counts = data.reduce((acc, current) => {
+                const key = current.mental_vs_physical;
+                acc[key] = (acc[key] || 0) + 1;
+                return acc;
+            }, {});
+
+            // Prepare data for Plotly
+            const trace = {
+                x: Object.keys(counts),
+                y: Object.values(counts),
+                type: 'bar'
+            };
+
+            const layout = {
+                title: 'Mental vs Physical Count Plot',
+                xaxis: { title: 'Response' },
+                yaxis: { title: 'Count' }
+            };
+
+            // Display Plotly chart
+            Plotly.newPlot('result', [trace], layout);
+        }
+
+        function displayMentalHealthComments(data) {
+            // Prepare data for Plotly
+            const trace = {
+                x: data.map(item => item.Frequency),
+                y: data.map(item => item.Word),
+                type: 'bar',
+                orientation: 'h' // Horizontal bar chart
+            };
+
+            const layout = {
+                title: 'Mental Health Comments Frequency',
+                xaxis: { title: 'Frequency' },
+                yaxis: { title: 'Word' },
+                height: 500, // Adjust the height of the plot
+                margin: {
+                    l: 100, // Adjust the left margin to fit long labels
+                    r: 50,
+                    b: 50,
+                    t: 100,
+                    pad: 4
+                },
+                annotations: [
+                    {
+                        xref: 'paper',
+                        yref: 'paper',
+                        x: 1.05, // Position to the right of the chart
+                        y: 1,
+                        xanchor: 'left',
+                        yanchor: 'top',
+                        text: 'tts = Therapy, Treatment, Support',
+                        showarrow: false,
+                        font: {
+                            size: 12,
+                            color: 'black'
+                        }
+                    }
+                ]
+            };
+
+            // Display Plotly chart
+            Plotly.newPlot('result', [trace], layout);
         }
     </script>
 </body>
