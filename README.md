@@ -26,12 +26,21 @@ pip install flask_cors
 
 #### Run server
 python server/mental_health_app.py
+This will show the address. Copy and paste in browser.
+e.g.
+```
+python server/mental_health_app.py
+ * Serving Flask app 'mental_health_app'
+ * Debug mode: on
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 131-636-924
+ ```
 
 #### Make sure you see something like this
 Running on http://127.0.0.1:5000
 This address is important and is used in the client when making API requests
 e.g. const apiUrl = 'http://127.0.0.1:5000/' + section;
-
-### Starting the client
-In VSCODE right click client/mental_health_dashboard.html and click "open with live server".
-Can also just directly open 
