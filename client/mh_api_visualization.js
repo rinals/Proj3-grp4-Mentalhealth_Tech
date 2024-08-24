@@ -49,11 +49,20 @@ function displayMentalVsPhysicalPlot(data) {
         return acc;
     }, {});
 
+    // Define colors for each bar
+    const colors = Object.keys(counts).map((_, index) => {
+        // Generate a different color for each bar (using a simple color palette or random colors)
+        return `hsl(${index * (360 / Object.keys(counts).length)}, 70%, 50%)`; // HSL color model for variety
+    });
+
     // Prepare data for Plotly
     const trace = {
         x: Object.keys(counts),
         y: Object.values(counts),
-        type: 'bar'
+        type: 'bar',
+        marker: {
+            color: colors // Assign the colors array to the bars
+        }
     };
 
     const layout = {
@@ -67,12 +76,22 @@ function displayMentalVsPhysicalPlot(data) {
 }
 
 function displayMentalHealthComments(data) {
+
+    // Define colors for each bar
+    const colors = data.map((_, index) => {
+        // Generate a different color for each bar (using a simple color palette or random colors)
+        return `hsl(${index * (360 / data.length)}, 70%, 50%)`; // HSL color model for variety
+    });
+
     // Prepare data for Plotly
     const trace = {
         x: data.map(item => item.Frequency),
         y: data.map(item => item.Word),
         type: 'bar',
-        orientation: 'h' // Horizontal bar chart
+        orientation: 'h', // Horizontal bar chart
+        marker: {
+            color: colors // Assign the colors array to the bars
+        }
     };
 
     const layout = {
