@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, render_template
 import pandas as pd
 import sqlite3
 from flask_cors import CORS
@@ -12,6 +12,11 @@ app = Flask(__name__)
 CORS(app)
 
 survey_table_name = "survey_data_combined"
+
+# Route for the root URL
+@app.route('/')
+def home():
+    return render_template('index.html')
 
 # API endpoint
 @app.route('/tech-workers', methods=['GET'])
