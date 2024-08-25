@@ -41,7 +41,7 @@ def get_tech_workers_data():
 def get_mental_vs_physical():
     conn = sqlite3.connect('./survey_database.db')
 
-    query = f"SELECT mental_vs_physical FROM {survey_table_name} WHERE Country = 'United States';"
+    query = f"SELECT mental_health_consequence, phys_health_consequence FROM {survey_table_name} WHERE Country = 'United States';"
     result_df = pd.read_sql_query(query, conn)
 
     conn.close()
