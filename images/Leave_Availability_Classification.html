@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-bfd93bddf5e5fc79ca46c27d38262e72"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "leave", "legend": null, "scale": {"domain": ["Don't know", "Somewhat difficult", "Somewhat easy", "Very difficult", "Very easy"], "range": ["#BFBFBF", "#FFD700", "#FFA500", "#DC143C", "#32CD32"]}, "type": "nominal"}, "tooltip": [{"field": "leave", "type": "nominal"}, {"field": "percentage", "type": "quantitative"}], "x": {"field": "leave", "title": "Leave Availability Survey Options", "type": "nominal"}, "y": {"field": "percentage", "scale": {"domain": [0, 100]}, "title": "Percentage of Responses (%)", "type": "quantitative"}}, "height": 300, "params": [{"name": "Classification", "select": {"type": "point", "fields": ["classification_type"]}, "bind": {"input": "select", "options": ["Classified", "Unclassified"]}}], "title": "Comparison of Leave Availability by Classification", "transform": [{"filter": {"param": "Classification"}}], "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-bfd93bddf5e5fc79ca46c27d38262e72": [{"classification_type": "Classified", "leave": "Don't know", "count": 9, "percentage": 56.25}, {"classification_type": "Classified", "leave": "Somewhat difficult", "count": 1, "percentage": 6.25}, {"classification_type": "Classified", "leave": "Somewhat easy", "count": 1, "percentage": 6.25}, {"classification_type": "Classified", "leave": "Very difficult", "count": 1, "percentage": 6.25}, {"classification_type": "Classified", "leave": "Very easy", "count": 4, "percentage": 25.0}, {"classification_type": "Unclassified", "leave": "Don't know", "count": 7, "percentage": 46.666666666666664}, {"classification_type": "Unclassified", "leave": "Somewhat difficult", "count": 2, "percentage": 13.333333333333334}, {"classification_type": "Unclassified", "leave": "Somewhat easy", "count": 2, "percentage": 13.333333333333334}, {"classification_type": "Unclassified", "leave": "Very difficult", "count": 2, "percentage": 13.333333333333334}, {"classification_type": "Unclassified", "leave": "Very easy", "count": 2, "percentage": 13.333333333333334}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

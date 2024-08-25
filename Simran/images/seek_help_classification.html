@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.8.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-7c2ecf1297413f4bcd8bd8708dae11a9"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "seek_help", "legend": null, "scale": {"domain": ["Don't know", "No", "Yes"], "range": ["#BFBFBF", "#FF4C4C", "#32CD32"]}, "type": "nominal"}, "tooltip": [{"field": "seek_help", "type": "nominal"}, {"field": "percentage", "type": "quantitative"}], "x": {"field": "seek_help", "title": "Seek Help Survey Options", "type": "nominal"}, "y": {"field": "percentage", "scale": {"domain": [0, 100]}, "title": "Percentage of Responses (%)", "type": "quantitative"}}, "height": 300, "params": [{"name": "Classification", "select": {"type": "point", "fields": ["classification_type"]}, "bind": {"input": "select", "options": ["Classified", "Unclassified"]}}], "title": "Comparison of Seeking Help for Mental Health by Classification", "transform": [{"filter": {"param": "Classification"}}], "width": 400, "$schema": "https://vega.github.io/schema/vega-lite/v5.8.0.json", "datasets": {"data-7c2ecf1297413f4bcd8bd8708dae11a9": [{"classification_type": "Classified", "seek_help": "Don't know", "count": 7, "percentage": 43.75}, {"classification_type": "Classified", "seek_help": "No", "count": 3, "percentage": 18.75}, {"classification_type": "Classified", "seek_help": "Yes", "count": 6, "percentage": 37.5}, {"classification_type": "Unclassified", "seek_help": "Don't know", "count": 6, "percentage": 40.0}, {"classification_type": "Unclassified", "seek_help": "No", "count": 3, "percentage": 20.0}, {"classification_type": "Unclassified", "seek_help": "Yes", "count": 6, "percentage": 40.0}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
