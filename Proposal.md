@@ -6,11 +6,11 @@ This project focuses on understanding how mental health is perceived, supported,
 Background: With increasing awareness of mental health issues, especially in high-stress industries like tech, it's critical to understand how these issues manifest and what factors exacerbate them.
 
 
-## Project Team
-Thay Chansy
-Gursimran Kaur (Simran)
-Jeff Kim
-Rinal Shastri
+## Team Members
+- Thay Chansy
+- Gursimran Kaur (Simran)
+- Jeff Kim
+- Rinal Shastri
 
 
 ## Type of Data
@@ -64,7 +64,11 @@ What are the key mental health challenges faced by tech workers, and how do empl
 
 ## References 
 Altair Documentation. (n.d.). Retrieved from https://altair-viz.github.io/gallery/index.html
+
 Kaggle. (2023). Tech Employee Mental Health Surveys. Retrieved from [https://www.kaggle.com/](https://www.kaggle.com/) 
+
 Mueller, A. (n.d.). WordCloud Documentation. Retrieved from https://amueller.github.io/word_cloud/ 
+
 Loria, S. (n.d.). TextBlob: Simplified Text Processing. Retrieved from https://textblob.readthedocs.io/en/dev/ 
+
 Waskom, M. (n.d.). Seaborn: Statistical Data Visualization. Retrieved from https://seaborn.pydata.org/tutorial/color_palettes.html 
