@@ -1,6 +1,10 @@
 # Project 3 Proposal
 
-## Dataset: Mental Health in the Tech SurveyProject Overview
+## Dataset: Mental Health in the Tech Survey
+
+
+## Project Overview
+
 The State of Mental Health Awareness and Support in the Tech Workplace
 This project focuses on understanding how mental health is perceived, supported, and managed in various work environments. It explores the extent of mental health challenges among employees, the availability of support systems, and the impact of workplace culture on mental health outcomes. The project also considers factors such as company size, region, and the presence of mental health policies to draw insights into the overall state of mental health in different workplaces.
 Background: With increasing awareness of mental health issues, especially in high-stress industries like tech, it's critical to understand how these issues manifest and what factors exacerbate them.
