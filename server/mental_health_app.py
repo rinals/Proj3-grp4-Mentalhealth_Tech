@@ -87,5 +87,43 @@ def get_themes_in_comments():
     result = usa_comments_df.to_dict(orient='records')
     return jsonify(result)
 
+# API endpoint
+@app.route('/classified-comments-large-companies', methods=['GET'])
+def get_classified_comments_large_companies():
+    conn = sqlite3.connect('./survey_database.db')
+
+    query = f"SELECT seek_help, leave, comments, Classification, `company size` FROM {survey_table_name} WHERE Country = 'United States';"
+    usa_data = pd.read_sql_query(query, conn)
+
+    conn.close()
+
+    # Drop rows where comments are null
+    usa_data = usa_data.dropna(subset=['comments'])
+
+    large_company_df = usa_data[usa_data['company size'] == 'Large'][['comments', 'Classification']].copy()
+    classified_comments = large_company_df[large_company_df['Classification'].isin(['Anxiety', 'Depression', 'Both'])]
+
+    result = classified_comments.to_dict(orient='records')
+    return jsonify(result)
+
+# API endpoint
+@app.route('/unclassified-comments-large-companies', methods=['GET'])
+def get_unclassified_comments_large_companies():
+    conn = sqlite3.connect('./survey_database.db')
+
+    query = f"SELECT seek_help, leave, comments, Classification, `company size` FROM {survey_table_name} WHERE Country = 'United States';"
+    usa_data = pd.read_sql_query(query, conn)
+
+    conn.close()
+
+    # Drop rows where comments are null
+    usa_data = usa_data.dropna(subset=['comments'])
+
+    large_company_df = usa_data[usa_data['company size'] == 'Large'][['comments', 'Classification']].copy()
+    unclassified_comments = large_company_df[large_company_df['Classification'] == 'Unclassified']
+
+    result = unclassified_comments.to_dict(orient='records')
+    return jsonify(result)
+
 if __name__ == '__main__':
     app.run(debug=True)
