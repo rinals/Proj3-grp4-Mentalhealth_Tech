@@ -79,6 +79,7 @@ def get_themes_in_comments():
     query = f"SELECT comments FROM {survey_table_name} WHERE Country = 'United States';"
     result_df = pd.read_sql_query(query, conn)
     usa_comments_df = result_df.dropna(subset=['comments'])
+    usa_comments_df['comments'] = usa_comments_df['comments'].str.lower()
 
     conn.close()
 
