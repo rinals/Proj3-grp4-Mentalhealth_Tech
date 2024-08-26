@@ -88,3 +88,11 @@ Press CTRL+C to quit
 Running on http://127.0.0.1:5000
 This address is important and is used in the client when making API requests
 e.g. const apiUrl = 'http://127.0.0.1:5000/' + section;
+
+#### Word cloud
+The word cloud images are generated using javascript d3 library.
+d3 randomly places the words in different locations within the image, due to this the image will look slightly different each time we click on the menu item.
+
+d3 cloud library issues:
+https://unpkg.com/d3-cloud/build/d3.layout.cloud.js can sometimes fail to download when HTML page is opened.
+To mitigate this we downloaded the javascript file into our repository in 'server/static/js'
