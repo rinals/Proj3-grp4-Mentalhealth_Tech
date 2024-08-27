@@ -4,20 +4,24 @@
 
 ## Table of Contents
 
-1. [Introduction](#introduction)
-2. [Prerequisites](#prerequisites)
-3. [SQLite Database Creation and Table Combination](#sqlite-database-creation-and-table-combination)
-4. [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-5. [Steps](#steps)
-6. [Flask Server](#flask-server)
-7. [Client Application](#client-application)
-8. [How to Run](#how-to-run)
-9. [RunServer](#run-server)
-10. [Copy,pasteinyourbrowser](#copy-paste-in-your-browser)
-11. [WordCloud](#word-cloud)
-12. [Known Issues and Limitations](#known-issues-and-limitations)
-13. [Acknowledgements](#acknowledgments)
-14. [Contact](#contact)
+- [Proj3-grp4-Mentalhealth\_Tech](#proj3-grp4-mentalhealth_tech)
+- [The Invisible Struggle: Mental Health in the Tech Industry](#the-invisible-struggle-mental-health-in-the-tech-industry)
+  - [Table of Contents](#table-of-contents)
+- [Introduction](#introduction)
+  - [Prerequisites](#prerequisites)
+- [SQLite Database Creation and Table Combination](#sqlite-database-creation-and-table-combination)
+  - [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
+  - [Steps:](#steps)
+  - [FLASK Server](#flask-server)
+  - [Client Application](#client-application)
+  - [HOW TO RUN](#how-to-run)
+    - [Start Server](#start-server)
+  - [Run server](#run-server)
+    - [Copy, paste in your browser](#copy-paste-in-your-browser)
+  - [Word cloud](#word-cloud)
+  - [Known Issues and Limitations](#known-issues-and-limitations)
+  - [Acknowledgments](#acknowledgments)
+  - [Contact](#contact)
 
 # Introduction
 
