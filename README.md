@@ -146,6 +146,6 @@ Our team would like to express appreciation for all the support, guidance, and r
 If you have any questions or suggestions, feel free to contact our team at:
 
 - Jeff Kim - jeffjunohkim@gmail.com
-- Rinal Shastri - rinal.shastri@outlook.com/rinaljoginshastri@gmail.com
+- Rinal Shastri - rinal.shastri@outlook.com / rinaljoginshastri@gmail.com
 - Gursimran Kaur - Kaursimran081999@gmail.com
 - Thay Chansy - thay.chansy@gmail.com
