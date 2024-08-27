@@ -7,16 +7,17 @@
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
 3. [SQLite Database Creation and Table Combination](#sqlite-database-creation-and-table-combination)
-3. [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-4. [Steps](#steps)
-5. [Flask Server](#flask-server)
-6. [Client Application](#client-application)
-7. [How to Run](#how-to-run)
-8. [RunServer](#run-server)
-9. [WordCloud](#word-cloud)
-11. [Known Issues and Limitations](#known-issues-and-limitations)
-12. [Acknowledgements](#acknowledgments)
-13. [Contact](#contact)
+4. [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
+5. [Steps](#steps)
+6. [Flask Server](#flask-server)
+7. [Client Application](#client-application)
+8. [How to Run](#how-to-run)
+9. [RunServer](#run-server)
+10. [Copy,pasteinyourbrowser](#copy-paste-in-your-browser)
+11. [WordCloud](#word-cloud)
+12. [Known Issues and Limitations](#known-issues-and-limitations)
+13. [Acknowledgements](#acknowledgments)
+14. [Contact](#contact)
 
 # Introduction
 
@@ -116,7 +117,7 @@ Press CTRL+C to quit
  * Debugger PIN: 131-636-924
  ```
 
-### Make sure you see something like this
+### Copy, paste in your browser
 Running on http://127.0.0.1:5000
 This address is important and is used in the client when making API requests
 e.g. const apiUrl = 'http://127.0.0.1:5000/' + section;
@@ -135,6 +136,8 @@ To mitigate this we downloaded the javascript file into our repository in 'serve
 
 ## Acknowledgments
 
+Our team would like to express appreciation for all the support, guidance, and resources that were made available to us throughout the course of this project by: 
+
 - Our instructors, Elias Castro Hernandez, Brian Perry, Karen Silso for continuous guidance and support throughout the project.
 - Google Chrome, Xpert Learning Assistant in Bootcamp spot website and Chat GPT for providing insightful tutorials and resources.
 
@@ -142,7 +145,7 @@ To mitigate this we downloaded the javascript file into our repository in 'serve
 
 If you have any questions or suggestions, feel free to contact our team at:
 
-- Jeff Kim
-- Rinal Shastri
-- Gursimran Kaur
-- Thay Chansy
+- Jeff Kim - jeffjunohkim@gmail.com
+- Rinal Shastri - rinal.shastri@outlook.com/rinaljoginshastri@gmail.com
+- Gursimran Kaur - Kaursimran081999@gmail.com
+- Thay Chansy - thay.chansy@gmail.com
