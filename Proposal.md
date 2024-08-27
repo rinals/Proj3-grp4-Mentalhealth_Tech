@@ -24,8 +24,7 @@ Primary Source: The Mental Health in Tech Survey dataset from Kaggle.
 
 
 ## Research Question
-What are the key mental health challenges faced by tech workers, and how do employee comments highlight the influence of factors such as company size, demographics, location, and work type?
-
+What are the key mental health challenges faced by tech workers, and how do employee comments highlight the influence of factors such as company size, demographics, support, and leave opportunities? 
 
 ## Objectives
 - Identify common mental health themes based on employee comments.
