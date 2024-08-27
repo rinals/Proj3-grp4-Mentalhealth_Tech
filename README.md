@@ -27,7 +27,7 @@
 
 This project, "The Invisible Struggle: Mental Health in the Tech Industry," focuses on analyzing mental health data within the tech industry. It involves creating an SQLite database from survey data, combining tables, transforming and visualizing the data through an Entity-Relationship Diagram (ERD). The project also includes a Flask server that serves a JSON API and a client-side application that visualizes the data using Plotly and d3.js.
 
-## Prerequisites
+# Prerequisites
 Necessary software and tools required to run the project:
 
 - Python 3.x
@@ -121,7 +121,8 @@ Press CTRL+C to quit
  * Debugger PIN: 131-636-924
  ```
 
-### Copy and Paste in Browser
+
+## Copy, paste in your browser
 Running on http://127.0.0.1:5000
 This address is important and is used in the client when making API requests
 e.g. const apiUrl = 'http://127.0.0.1:5000/' + section;
