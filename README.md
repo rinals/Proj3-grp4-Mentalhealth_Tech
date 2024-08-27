@@ -7,23 +7,23 @@
 - [Proj3-grp4-Mentalhealth\_Tech](#proj3-grp4-mentalhealth_tech)
 - [The Invisible Struggle: Mental Health in the Tech Industry](#the-invisible-struggle-mental-health-in-the-tech-industry)
   - [Table of Contents](#table-of-contents)
-- [Introduction](#introduction)
+  - [Introduction](#introduction)
   - [Prerequisites](#prerequisites)
-- [SQLite Database Creation and Table Combination](#sqlite-database-creation-and-table-combination)
+  - [SQLite Database Creation and Table Combination](#sqlite-database-creation-and-table-combination)
   - [Entity-Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-  - [Steps:](#steps)
+  - [Project Steps](#project-steps)
   - [FLASK Server](#flask-server)
   - [Client Application](#client-application)
-  - [HOW TO RUN](#how-to-run)
+  - [How to Run](#how-to-run)
     - [Start Server](#start-server)
-  - [Run server](#run-server)
-    - [Copy, paste in your browser](#copy-paste-in-your-browser)
+    - [Run server](#run-server)
+    - [Copy and Paste in Browser](#copy-and-paste-in-browser)
   - [Word cloud](#word-cloud)
   - [Known Issues and Limitations](#known-issues-and-limitations)
   - [Acknowledgments](#acknowledgments)
   - [Contact](#contact)
 
-# Introduction
+## Introduction
 
 This project, "The Invisible Struggle: Mental Health in the Tech Industry," focuses on analyzing mental health data within the tech industry. It involves creating an SQLite database from survey data, combining tables, transforming and visualizing the data through an Entity-Relationship Diagram (ERD). The project also includes a Flask server that serves a JSON API and a client-side application that visualizes the data using Plotly and d3.js.
 
@@ -38,7 +38,7 @@ Necessary software and tools required to run the project:
 - D3.js (included in the project)
 
 
-# SQLite Database Creation and Table Combination
+## SQLite Database Creation and Table Combination
 
 This project outlines the steps to create and manipulate an SQLite database using survey data and visualize the data structure through an Entity-Relationship Diagram (ERD).
 
@@ -53,7 +53,7 @@ The ERD below represents the structure and relationships between the survey tabl
 - **classified_usa_comments**: Contains classified comments and additional data linked to respondents.
 -  **Primary key is `survey_id` to join across all tables
 
-## Steps:
+## Project Steps
 
 1. **Create SQLite Connection:**
    - Establish a connection to the SQLite database named `survey_database.db`.
@@ -99,13 +99,13 @@ The client-side application (`client/mental_health_dashboard.html`) includes a m
 
 
 
-## HOW TO RUN
+## How to Run
 ### Start Server
 1. **Install flask and flask-cors:**
 pip install flask
 pip install flask_cors
 
-## Run server
+### Run server
 python server/mental_health_app.py
 This will show the address. Copy and paste in browser.
 e.g.
@@ -121,7 +121,7 @@ Press CTRL+C to quit
  * Debugger PIN: 131-636-924
  ```
 
-### Copy, paste in your browser
+### Copy and Paste in Browser
 Running on http://127.0.0.1:5000
 This address is important and is used in the client when making API requests
 e.g. const apiUrl = 'http://127.0.0.1:5000/' + section;
